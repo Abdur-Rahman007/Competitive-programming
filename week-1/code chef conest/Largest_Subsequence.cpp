@@ -16,33 +16,39 @@ int main()
         cin >> s;
         for (int i=0; i<n-1; i++)
         {
-            if (s[i]=='a'&&s[i+1]=='b')
+            if (s[i]=='a'&& s[i+1]=='b')
             {
                 f++;
             }
-            if (s[i]=='b'&&s[i+1]=='a')
+            if (s[i]=='b'&& s[i+1]=='a')
             {
                 g++;
             }
         }
-        if (f==g && f>0)
+        if (f==g)
         {
-            cout << (f+g)*2 <<endl;
+            cout << n <<endl;
         }
         else{
-            int a=0, b=0;
+            int a=n, b=n;
             for (int i=0; i<n; i++)
             {
-                if (s[i]=='a')
+                if (s[i]!=s[0])
                 {
-                    a++;
+                    break;
                 }
-                else{
-                    b++;
+                a--;
+            }
+            for (int i=n-1; i>=0; i--)
+            {
+                if (s[i]!=s[n-1])
+                {
+                    break;
                 }
+                b--;
             }
             
-            cout << max(a,b) <<endl;
+            cout << max(a,b) <<'\n';
         }
     }
     
