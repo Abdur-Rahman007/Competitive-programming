@@ -11,8 +11,23 @@ int main()
 
     while (t--)
     {
+        int n;
+        cin >> n;
+
+        map<int, int> mp;
         
-        
+        for(int i=0; i<n; i++)
+        {
+            int a;
+            cin >> a;
+            if(a!=0)
+                mp[a]++;
+        }
+        if(mp.size()==1 || mp.size()==0)
+            cout << "YES\n";
+        else
+            cout << "NO\n";
+
     }
     
 
